@@ -1,0 +1,214 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1.5rem;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #1c1c1c;
+  background: #f7f6f3;
+}
+
+.page-header {
+  max-width: 80ch;
+  margin: 0 auto 1.5rem;
+}
+
+.page-header h1 {
+  font-size: clamp(1.3rem, 1rem + 1.2vw, 1.9rem);
+  margin-bottom: 0.5rem;
+}
+
+.explainer {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+.mode-switch input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.mode-switch label {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0 0.4rem 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: #fff;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.mode-switch label:hover {
+  border-color: #888;
+}
+
+.mode-switch input[type="radio"]:checked + label {
+  background: #1c1c1c;
+  color: #fff;
+  border-color: #1c1c1c;
+}
+
+.mode-switch input[type="radio"]:focus-visible + label {
+  outline: 2px solid #1c1c1c;
+  outline-offset: 2px;
+}
+
+/*Gallery grid*/
+.gallery {
+  display: grid;
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.item {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e4e2dc;
+  border-radius: 10px;
+  overflow: hidden;
+  min-width: 0; 
+}
+
+.item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3; 
+  object-fit: contain; 
+  background-color: #1c1c1c;
+  flex-shrink: 0;
+}
+
+.item-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0.9rem 1rem;
+  gap: 0.35rem;
+}
+
+.item-title {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.item-text {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #555;
+}
+
+.item-date {
+  font-size: 0.8rem;
+  color: #888;
+  padding: 0 1rem 0.9rem;
+}
+
+
+/* MODE 1 — GRID OF CARDS */
+#mode-grid:checked ~ .gallery {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-auto-rows: 1fr; 
+}
+
+#mode-grid:checked ~ .gallery .item {
+  flex-direction: column; 
+}
+
+#mode-grid:checked ~ .gallery .item-date {
+  margin-top: auto;
+}
+
+
+/* MODE 2 — COMPACT LIST*/
+#mode-list:checked ~ .gallery {
+  grid-template-columns: 1fr;
+}
+
+#mode-list:checked ~ .gallery .item {
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+#mode-list:checked ~ .gallery .item img {
+  width: 90px;
+  height: 90px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  flex-shrink: 0; 
+}
+
+#mode-list:checked ~ .gallery .item-body {
+  padding: 0.6rem 0;
+  min-width: 0;
+}
+
+#mode-list:checked ~ .gallery .item-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#mode-list:checked ~ .gallery .item-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+#mode-list:checked ~ .gallery .item-date {
+  margin-left: auto;
+  padding: 0 1rem 0 0;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+
+/* MODE 3 - MAGAZINE */
+#mode-magazine:checked ~ .gallery {
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+  grid-auto-rows: minmax(140px, auto);
+  grid-auto-flow: dense;
+  grid-auto-columns: 1fr;
+}
+
+#mode-magazine:checked ~ .gallery .item {
+  flex-direction: column;
+}
+
+#mode-magazine:checked ~ .gallery .item-date {
+  margin-top: auto;
+}
+
+#mode-magazine:checked ~ .gallery .item.lead {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+#mode-magazine:checked ~ .gallery .item.lead .item-body {
+  flex: 1 1 auto;
+}
+
+#mode-magazine:checked ~ .gallery .item.lead .item-title {
+  font-size: 1.4rem;
+}
+
+#mode-magazine:checked ~ .gallery .item.lead .item-text {
+  font-size: 0.95rem;
+}

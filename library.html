@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/task2style.css">
+    <title>Library</title>
+  </head>
+  <body>
+    <header>
+      <nav class="flex-nav">
+        <div id="logo">L</div>
+        <div class="nav-links">
+          <a href="">Home</a>
+          <a href="">Catalog</a>
+          <a href="">Membership</a>
+        </div>
+        <div class="nav-buttons">
+          <button type="button">Log in</button>
+          <button type="button">Sign up</button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- BOOK CARDS -->
+      <section class="card-row">
+        <article class="card">
+          <img src="media/ferals-the-crow-talker.jpg" alt="Cover of Ferals: The Crow Talker" class="book-cover">
+          <h3>Ferals: The Crow Talker</h3>
+          <p class="author">Jacob Grey</p>
+          <p>An orphaned boy who can only talk to the crows he lives among gets pulled into a hidden world of people bonded to animals, when a prison break brings danger straight to his door.</p>
+          <button type="button">Borrow</button>
+        </article>
+
+        <article class="card">
+          <img src="media/Chronicles-of-Narnia.jpeg" alt="Cover of The Lion, the Witch and the Wardrobe" class="book-cover">
+          <h3>The Lion, the Witch and the Wardrobe</h3>
+          <p class="author">C.S. Lewis</p>
+          <p>Four siblings step through an old wardrobe into the snow-bound land of Narnia, where a lion and a witch are locked in a struggle that the children find themselves pulled into.</p>
+          <button type="button">Borrow</button>
+        </article>
+
+        <article class="card">
+          <img src="media/the-grand-sophy.jpg" alt="Cover of The Grand Sophy" class="book-cover">
+          <h3>The Grand Sophy</h3>
+          <p class="author">Georgette Heyer</p>
+          <p>A spirited young woman arrives to stay with her cousins in Regency London and promptly turns their quiet, orderly household upside down.</p>
+          <button type="button">Borrow</button>
+        </article>
+      </section>
+
+      <!-- PAGINATION BAR -->
+      <nav class="pagination">
+        <div class="page-group">
+          <button type="button" aria-label="Previous page">&larr;</button>
+          <span class="page-numbers">
+            <a href="">1</a>
+            <a href="">2</a>
+            <a href="">3</a>
+          </span>
+          <button type="button" aria-label="Next page">&rarr;</button>
+        </div>
+        <div class="result-count">1–3 of 42 books</div>
+      </nav>
+
+      <!-- REVIEWS -->
+      <section class="reviews">
+        <h2>Reader reviews</h2>
+
+        <div class="comment">
+          <img src="images/avatar1.jpg" alt="Photo of reviewer Mia" class="avatar">
+          <p class="comment-text">
+            <strong>Mia:</strong> I picked up The Grand Sophy expecting a quiet romance and got a full-on comedy of manners instead. Sophy is a menace in the best way.
+          </p>
+        </div>
+
+        <div class="comment">
+          <img src="images/avatar2.jpg" alt="Photo of reviewer Daniel" class="avatar">
+          <p class="comment-text">
+            <strong>Daniel:</strong> Read Narnia to my daughter and honestly enjoyed it more the second time around as an adult. Holds up.
+          </p>
+        </div>
+
+        <div class="comment">
+          <img src="images/avatar3.jpg" alt="Photo of reviewer Omar" class="avatar">
+          <p class="comment-text">
+            <strong>Omar:</strong> Ferals was a fast read — good for my nephew who doesn't usually stick with a book past chapter two. He finished this one in two days.
+          </p>
+        </div>
+      </section>
+
+      <!-- MEMBERSHIP PLANS -->
+      <section class="pricing-table">
+        <article class="plan">
+          <h3>Basic</h3>
+          <p class="price">Free</p>
+          <ul>
+            <li>2 books at a time</li>
+            <li>2-week loan period</li>
+          </ul>
+        </article>
+
+        <article class="plan">
+          <h3>Student</h3>
+          <p class="price">$2/mo</p>
+          <ul>
+            <li>5 books at a time</li>
+            <li>4-week loan period</li>
+          </ul>
+        </article>
+
+        <article class="plan recommended">
+          <p class="badge">Most Popular</p>
+          <h3>Premium</h3>
+          <p class="price">$5/mo</p>
+          <ul>
+            <li>10 books at a time</li>
+            <li>4-week loan period</li>
+            <li>Reserve upcoming releases</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
